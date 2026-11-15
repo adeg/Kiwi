@@ -330,7 +330,7 @@ class TestExecutionRemoveLink(APITestCase):
         )
         self.assertEqual([], list(self.execution.links()))
 
-    def test_detach_log_with_empty_query_raises(self):
+    def test_remove_with_empty_query_raises_and_deletes_nothing(self):
         with self.assertRaisesRegex(
             XmlRPCFault, "Refusing an empty query: it would delete every record"
         ):
